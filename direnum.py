@@ -2,12 +2,27 @@
 import requests
 import argparse
 
+#header for the script
+def header():
+    #go to https://fsymbols.com/generators/tarty/ and get the name of the tool in this font
+    print("""
+██████╗░██╗██████╗░███████╗███╗░░██╗██╗░░░██╗███╗░░░███╗
+██╔══██╗██║██╔══██╗██╔════╝████╗░██║██║░░░██║████╗░████║
+██║░░██║██║██████╔╝█████╗░░██╔██╗██║██║░░░██║██╔████╔██║
+██║░░██║██║██╔══██╗██╔══╝░░██║╚████║██║░░░██║██║╚██╔╝██║
+██████╔╝██║██║░░██║███████╗██║░╚███║╚██████╔╝██║░╚═╝░██║
+╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝╚═╝░░╚══╝░╚═════╝░╚═╝░░░░░╚═╝""")
+    print("""
+█▄▄ █▄█   █▄░█ █ █▄░█ ░░█ ▄▀█   █░█ ▄▀█ ▀█▀ ▀█▀ █▀█ █▀█ █
+█▄█ ░█░   █░▀█ █ █░▀█ █▄█ █▀█   █▀█ █▀█ ░█░ ░█░ █▄█ █▀▄ █""")
+
+
 #function to scan directory
 def scanner(ip,wordlist):
     print('---------------Scanning---------------')
     print('---------------Valid URL--------------')
 
-#looping through each word in wordlist
+    #looping through each word in wordlist
     for word in wordlist:
         #making the url
         url=f"http://{ip}/{word}"
@@ -39,11 +54,9 @@ if __name__ == "__main__":
     parser.add_argument("-w", help="path of wordlist(optional)")
     args=parser.parse_args()
     ip = args.u
-    print("--------------------")
-    print("| DirEnum          |")
-    print("| by Ninja Hattori |")
-    print("--------------------")
-    print("\n")
+    header()
+    print("\n\n")
+
     
     if args.w == None:
         wordlist="default.txt"
