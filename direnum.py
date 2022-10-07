@@ -49,15 +49,15 @@ def scanner(ip,wordlist):
 
 #main function
 if __name__ == "__main__":
+    header()
+    print("\n\n")
     parser=argparse.ArgumentParser()
     parser.add_argument("-u", help="provide the ip address in the format 1.2.3.4")
     parser.add_argument("-w", help="path of wordlist(optional)")
     args=parser.parse_args()
     ip = args.u
-    header()
-    print("\n\n")
-
     
+   
     if args.w == None:
         wordlist="default.txt"
     else:
