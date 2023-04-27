@@ -2,7 +2,7 @@
 # DIRENUM
 A simple directory enumeration tool built using python.
 
-##INSTALLATION
+## INSTALLATION
 
 ```shell
 git clone https://github.com/ninja-hattori/DirEnum.git
